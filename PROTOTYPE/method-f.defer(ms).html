@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--  
+    Defer is used to ensure that a function call is performed later in a program’s execution, usually for purposes of cleanup. 
+
+    Add method "f.defer(ms)" to functions
+importance: 5
+Add to the prototype of all functions the method defer(ms), that runs the function after ms milliseconds.
+
+After you do it, such code should work:
+
+function f() {
+  alert("Hello!");
+}
+
+f.defer(1000); // shows "Hello!" after 1 second
+  -->
+
+  <script>
+    Function.prototype.defer = function (ms) {
+        setTimeout(this, ms);
+      };
+
+      function f() {
+          alert("Hello!");
+        }
+
+        f.defer(1000);
+  </script>
+</body>
+</html>
