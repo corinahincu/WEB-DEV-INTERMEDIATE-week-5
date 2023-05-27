@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Working with prototype</title>
+</head>
+<body>
+  <!-- 
+    Working with prototype
+importance: 5
+Here’s the code that creates a pair of objects, then modifies them.
+
+Which values are shown in the process?
+
+let animal = {
+  jumps: null
+};
+let rabbit = {
+  __proto__: animal,
+  jumps: true
+};
+
+alert( rabbit.jumps ); // ? (1)
+
+delete rabbit.jumps;
+
+alert( rabbit.jumps ); // ? (2)
+
+delete animal.jumps;
+
+alert( rabbit.jumps ); // ? (3)
+  -->
+
+  <script>
+    let animal = {
+        jumps: null
+      };
+      let rabbit = {
+        __proto__: animal,
+        jumps: true
+      };
+
+        alert(rabbit.jumps); // true
+
+        delete rabbit.jumps;
+
+        alert(rabbit.jumps); // null
+
+        delete animal.jumps;
+
+        alert(rabbit.jumps); // undefined
+
+  </script>
+</body>
+</html>
