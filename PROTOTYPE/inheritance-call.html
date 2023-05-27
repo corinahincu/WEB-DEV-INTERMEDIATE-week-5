@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where does it write?</title>
+</head>
+<body>
+  <!-- 
+    Where does it write?
+importance: 5
+We have rabbit inheriting from animal.
+
+If we call rabbit.eat(), which object receives the full property: animal or rabbit?
+
+let animal = {
+  eat() {
+    this.full = true;
+  }
+};
+
+let rabbit = {
+  __proto__: animal
+};
+
+rabbit.eat();
+  -->
+
+  <script>
+      let animal = {
+        eat() {
+          this.full = true;
+        }
+      };
+
+      let rabbit = {
+        __proto__: animal
+      };
+
+      rabbit.eat();
+      
+
+      // If we call rabbit.eat(), which object receives the full property: animal or rabbit?
+      // Raspunsul e rabbit, din cauza ca rabbit este un obiect înainte de punct, deci rabbit.eat()  modifică iepurele.
+  </script>
+</body>
+</html>
